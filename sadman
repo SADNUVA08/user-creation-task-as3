@@ -1,0 +1,30 @@
+# User Creation and Permissions Task
+
+1. Create Tupu User
+- Command used: `sudo adduser tupu`
+- This command was used to create the user `tupu`.
+
+ 2. Create Lupu User
+- Command used: `sudo useradd -m -d /home/lupu -s /bin/bash -G lupu lupu`
+- This command created the user `lupu` and assigned a home directory.
+
+3. Create Hupu System User
+- Command used: `sudo useradd --system --shell /bin/false hupu`
+- This command created the system user `hupu`.
+
+ 4. Add Users to Sudo Group
+- Command used: `sudo usermod -aG sudo tupu`
+- Command used: `sudo usermod -aG sudo lupu`
+- These commands added `tupu` and `lupu` to the sudo group.
+
+5. Create /opt/projekti Directory and Set Permissions
+- Command used: `sudo mkdir /opt/projekti`
+- Command used: `sudo groupadd projekti`
+- Command used: `sudo usermod -aG projekti tupu`
+- Command used: `sudo usermod -aG projekti lupu`
+- Command used: `sudo chown :projekti /opt/projekti`
+- Command used: `sudo chmod 770 /opt/projekti`
+- Command used: `sudo chmod g+s /opt/projekti`
+
+ Conclusion
+- Successfully created and configured user permissions for the project directory.
